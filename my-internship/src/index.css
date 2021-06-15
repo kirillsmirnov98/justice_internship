@@ -23,7 +23,7 @@
   height: 90px;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   z-index: 50;
 
   background-color: #FFFFFF;
@@ -58,7 +58,6 @@
 }
 .functional {
   padding: 20px 140px 20px 0;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,7 +65,6 @@
   z-index: 2;
 }
 .navigation {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -75,19 +73,20 @@
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  margin: 0 0 0 10px;
 }
 .navigation div {
-  margin: 0 0 0 5px;
-  cursor: default;
+  margin: 0 0 0 40px;
+  cursor: pointer;
+}
+.active_div {
+  text-decoration-line: underline;
 }
 .action {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 50px;
 }
 .action button {
   padding: 12px 24px;
@@ -96,6 +95,9 @@
   border-radius: 8px;
   color: #4448DA;
   font-family: Inter;
+}
+#bell {
+  padding: 0 25px;
 }
 /* Меню списков и добавления */
 .content_creator {
@@ -145,6 +147,9 @@
 
   color: #FFFFFF;
 }
+#notification {
+  margin: 0 16px;
+}
 /* Задачи */
 .tasks_list {
   padding: 0 140px;
@@ -174,6 +179,16 @@
 }
 .tasks_list img {
   width: 14px;
+}
+#inputTask {
+  min-width: 250px;
+  margin: 0 16px;
+}
+.tasks_creator img {
+  margin: 0 0 0 10px;
+}
+.active_filter {
+  background-color: aquamarine;
 }
 /* Футер */
 .footer {
@@ -211,10 +226,12 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 14px;
-  width: 40%;
   cursor: default;
 
   color: #FFFFFF;
+}
+.footer__navigation div {
+  margin: 0 0 0 40px;
 }
 .middle__footer {
   border: 1px solid;
@@ -238,7 +255,9 @@
   padding: 0 0 0 0;
 }
 .terms_cond_pp {
-  width: 40%;
   display: flex;
   justify-content: space-between;
+}
+.terms_cond_pp div {
+  margin: 0 0 0 60px;
 }

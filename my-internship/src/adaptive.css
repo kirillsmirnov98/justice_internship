@@ -1,8 +1,23 @@
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1080px) {
     .content_creator {
         display: block;
     }
+    #inputTask {
+        min-width: 200px;
+        margin: 0 16px 0 0;
+    }
 } 
+@media screen and (max-width: 960px) {
+    .navigation div {
+        margin: 0 0 0 5px;
+    }
+    #bell {
+        padding: 0 5px;
+    }
+    .action {
+        margin: 0 0 0 10px;
+    }
+}
 @media screen and (max-width: 768px) {
     .container {
         z-index: 50;
@@ -163,6 +178,10 @@
     }
     .bot__footer {
         padding: 20px 0;
+    }
+    #inputTask {
+        min-width: 140px;
+        margin: 0 10px 0 0;
     }
 } 
 @media screen and (max-width: 320px) {

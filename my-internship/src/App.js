@@ -104,6 +104,67 @@ function App() {
       setNotifs([...notifs.slice(0, index), ...notifs.slice(index + 1)]);
   };
 
+  /* Текущий элемент панели навигации */
+  const navActive = (id) => {
+    let btnMain = document.getElementById('btn-main');
+    let btnList = document.getElementById('btn-list');
+    let btnFriends = document.getElementById('btn-friends');
+    let btnContacts = document.getElementById('btn-contacts');
+      if(id === 'btn-main') { 
+          btnList.classList.remove('active_div');
+          btnFriends.classList.remove('active_div');
+          btnContacts.classList.remove('active_div');
+          btnMain.classList.add('active_div');
+      };
+      if(id === 'btn-list') { 
+          btnMain.classList.remove('active_div');
+          btnFriends.classList.remove('active_div');
+          btnContacts.classList.remove('active_div');
+          btnList.classList.add('active_div');
+      };
+      if(id === 'btn-friends') { 
+          btnMain.classList.remove('active_div');
+          btnList.classList.remove('active_div');
+          btnContacts.classList.remove('active_div');
+          btnFriends.classList.add('active_div');
+      };
+      if(id === 'btn-contacts') { 
+          btnMain.classList.remove('active_div');
+          btnList.classList.remove('active_div');
+          btnFriends.classList.remove('active_div');
+          btnContacts.classList.add('active_div');
+      };
+  };
+
+ /* Текущий элемент фильтра */
+  const currentFilter = (name) => {
+    let list = document.getElementById('tasks-list');
+    let notif = document.getElementById('notification');
+    let other = document.getElementById('other_filter');
+    
+    if(name === 'tasks-list'){
+      list.classList.add('active_filter');
+      notif.classList.remove('active_filter');
+      other.classList.remove('active_filter');
+    };
+    if(name === 'notification'){
+      notif.classList.add('active_filter');
+      list.classList.remove('active_filter');
+      other.classList.remove('active_filter');    
+    };
+    if(name === 'other_filter'){
+      other.classList.add('active_filter');
+      list.classList.remove('active_filter');
+      notif.classList.remove('active_filter');
+    }
+  };
+
+  /* Обработчик двух событий на кнопках "Список" и "Напоминания" */
+  const twoFunctions = (newType, name) => {
+    clickTypeBtn(newType);
+    currentFilter(name);
+  };
+  
   return (
     <div className = "container">
       <div className = "header">       
@@ -116,16 +177,16 @@ function App() {
           <div className = "functional disactive" id='burger-menu'>
             
             <div className = "navigation">
-              <div>
+              <div id = "btn-main" onClick = {() => navActive('btn-main')}>
                 Главная
               </div>
-              <div>
+              <div id = "btn-list" onClick = {() => navActive('btn-list')}>
                 Список
               </div>
-              <div>
+              <div id = "btn-friends" onClick = {() => navActive('btn-friends')}>
                 Друзья
               </div>
-              <div>
+              <div id = "btn-contacts" onClick = {() => navActive('btn-contacts')}>
                 Контакты
               </div>
             </div>
@@ -133,20 +194,20 @@ function App() {
               <button>
                 Выйти
               </button>
-              <div><img src = {bell} alt = "X"/></div>
+              <div id = "bell"><img src = {bell} alt = "X"/></div>
               <div><img src = {userIcon} alt = "X"/></div>
             </div>
           </div>     
       </div>
       <div className = "content_creator">
         <div className = "filters">
-          <button onClick={() => clickTypeBtn('list')}>
+          <button id = "tasks-list" className = "active_filter" onClick={() => twoFunctions('list', 'tasks-list')}>
             Список
           </button>
-          <button onClick={() => clickTypeBtn('notif')}>
+          <button id = "notification" onClick={() => twoFunctions('notif', 'notification')}>
             Напоминания
           </button>
-          <button>
+          <button id = "other_filter" onClick = {() => currentFilter('other_filter')}>
             Еще
           </button>
         </div>
