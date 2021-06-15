@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh; 
+  overflow: hidden; 
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+/* Шапка */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  z-index: 50;
+
+  background-color: #FFFFFF;
+  border: 1px solid #F4F5F4;
+}
+.header:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+}
+.logo_primary {
+  padding: 20px 0 20px 140px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  z-index: 4;
+  cursor: default;
+
+  color: #4448DA;
+}
+.header__burger {
+  display: none;
+}
+.functional {
+  padding: 20px 140px 20px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Inter;
+  z-index: 2;
+}
+.navigation {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #1F1F1F;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  margin: 0 0 0 10px;
+}
+.navigation div {
+  margin: 0 0 0 5px;
+  cursor: default;
+}
+.action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 0 0 0 10px;
+}
+.action button {
+  padding: 12px 24px;
+  border: 1px solid #4448DA;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: #4448DA;
+  font-family: Inter;
+}
+/* Меню списков и добавления */
+.content_creator {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin: 98px 140px 32px 140px;
+}
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filters button {
+  border: 1px solid #F4F5F4;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 16px 32px;
+  cursor: pointer;
+}
+.tasks_creator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tasks_creator input {  
+  font-family: Inter;
+  font-size: 14px;
+  line-height: 14px;
+  border: 1px solid #F4F5F4;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 16px;
+
+  color: rgba(31, 31, 31, 0.3);
+}
+.tasks_creator button {
+  padding: 16px 32px;
+  background: #4448DA;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  font-family: Inter;
+  font-size: 14px;
+  line-height: 14px;
+  cursor: pointer;
+
+  color: #FFFFFF;
+}
+/* Задачи */
+.tasks_list {
+  padding: 0 140px;
+}
+.tasks_task {
+  font-size: 14px;
+  font-family: Inter;
+  padding: 24px;
+  background: #F4F5F4;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tasks_task:last-child {
+  margin-bottom: 0;
+}
+.tasks_empty-list {
+  font-size: 14px;
+  font-family: Inter;
+  padding: 24px;
+  background: #F4F5F4;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.tasks_list img {
+  width: 14px;
+}
+/* Футер */
+.footer {
+  height: 190px;
+  background: #0B0E27;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+.top__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 140px;
+}
+.logo_secondary {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  cursor: default;
+
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}
+.footer__navigation {
+  display: flex;
+  justify-content: space-between;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  width: 40%;
+  cursor: default;
+
+  color: #FFFFFF;
+}
+.middle__footer {
+  border: 1px solid;
+  color: #3f3f3f;
+  margin: 0 140px;
+}
+.bot__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 140px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+
+  color: #B4B4B4;
+}
+.all_rights_reserved {
+  padding: 0 0 0 0;
+}
+.terms_cond_pp {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
